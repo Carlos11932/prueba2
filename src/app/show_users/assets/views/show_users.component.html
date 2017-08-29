@@ -1,0 +1,17 @@
+<h1>
+  {{title}}
+</h1>
+<div class="">
+  <ul *ngIf="users">
+    <li *ngFor="let user of users; let i = index">
+      <ul>
+        <li>user: {{i+1}}</li>
+  			<li>Name: {{user.name}}</li>
+  			<li>Birthdate: {{user.birthdate}}</li>
+  			<li>id: {{user.id}}</li>
+  		</ul>
+      <br>
+    </li>
+  </ul>
+  <span *ngIf="!users">Cargando..</span>
+</div>
