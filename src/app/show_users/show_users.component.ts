@@ -1,27 +1,33 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Show_Users } from './model/show_users';
-import { QueryService } from '../services/querys.service'
+import { UserService } from '../services/user.service'
+import { User } from '../models/user'
 
 @Component({
   selector: 'show-users-component',
   templateUrl: '/assets/views/show_users.component.html',
-  providers: [QueryService]
+  providers: [UserService]
 })
 export class ShowUsersComponent {
-  title = 'show user!';
-  public users;
+  public title = 'show user!';
+  public users: User[];
 
   constructor(
-    private _queryService: QueryService
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _UserService: UserService
   ){}
 
   ngOnInit(){
-    this._queryService.getUsers().subscribe(
+    this._UserService.getUsers().subscribe(
       result => {
-        console.log(result)
         this.users = result;
-        if(!this.users){
-          console.log('sin usuarios')
+
+        console.log(result)
+        if(result.code != 200){
+          console.log(result);
+        }else{
         }
       },
       error => {

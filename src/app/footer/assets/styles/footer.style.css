@@ -1,0 +1,13 @@
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-top: 1px solid;
+  border-color: #e7e7e7;
+  color: #777;
+}
+.footer-icon{
+  font-size: 30px;
+	margin: 5px 20px;
+	color: #2795af;
+}

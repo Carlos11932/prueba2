@@ -4,6 +4,9 @@
 <div class="">
   <ul *ngIf="users">
     <li *ngFor="let user of users; let i = index">
+      <a [routerLink]="['/show_user_details', user.id]" name="show">show</a>
+      <a [routerLink]="['/edit_user', user.id]" name="edit">Edit</a>
+      <a name="delete">Delete</a>
       <ul>
         <li>user: {{i+1}}</li>
   			<li>Name: {{user.name}}</li>
