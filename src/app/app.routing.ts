@@ -2,11 +2,11 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Importar componentes
-import { HomeComponent } from './home/home.component';
-import { EditUserComponent } from './edit_user/edit_user.component';
-import { CreateUserComponent } from './create_users/create_user.component';
-import { ShowUsersComponent } from './show_users/show_users.component';
-import { ShowUserDetailsComponent } from './show_user_details/show_user_details.component'
+import { HomeComponent } from './components/home/home.component';
+import { EditUserComponent } from './components/edit_user/edit_user.component';
+import { CreateUserComponent } from './components/create_users/create_user.component';
+import { ShowUsersComponent } from './components/show_users/show_users.component';
+import { ShowUserDetailsComponent } from './components/show_user_details/show_user_details.component'
 
 
 

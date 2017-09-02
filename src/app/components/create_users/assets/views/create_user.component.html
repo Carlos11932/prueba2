@@ -1,0 +1,23 @@
+<h1>
+  {{title}} create user
+</h1>
+<hr>
+<div class="container-create">
+    <header class="header-create">
+        <h4>Nuevo usuario</h4>
+        <button class="f-right btn btn-sm btn-primary" (click)="setUserEmpty()">Restablecer campos</button>
+    </header>
+    <form class="form-create" (ngSubmit)="onSubmit()" #formUser="ngForm">
+<div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="user.name" required>
+        </div>
+<div class="input-group">
+            <label for="birthdate">Birthdate</label>
+            <input type="date" class="form-control" name="birthdate" #birthdate="ngModel" [(ngModel)]="user.birthdate" required>
+        </div>
+<div class="form-submit">
+            <input type="submit" class="btn btn-sm btn-success" value="{{title}}" [disabled]="!formUser.form.valid">
+        </div>
+    </form>
+</div>

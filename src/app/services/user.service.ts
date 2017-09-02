@@ -17,7 +17,6 @@ export class UserService {
 
   constructor(public _http:Http){
     this.url = GLOBAL.userUrl;
-    this.removeUserUrl = this.url+'remove'
 
 
   }
@@ -49,5 +48,9 @@ export class UserService {
     let headers = new Headers({'Content-Type':'application/json'});
 
     return this._http.post(this.url+'update/'+id, params, {headers: headers}).map(res => res.json());
+  }
+
+  deleteUser(id){
+    return this._http.get(this.url+'remove/'+id);
   }
 }

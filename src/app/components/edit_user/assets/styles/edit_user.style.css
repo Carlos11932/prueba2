@@ -1,0 +1,40 @@
+
+.container-edit{
+	max-width: 450px;
+    background-color: #f8f8f8;
+    border: 1px solid #e7e7e7;
+    padding: 10px;
+    border-radius: 5px;
+}
+.header-edit{
+	height: 50px;
+}
+.header-edit > h4{
+	float: left;
+	margin: 5px;
+}
+.header-edit > button{
+	float: right;
+}
+.form-edit > .input-group{
+width: 100%;
+}
+.form-edit label {
+	margin: 4px;
+}
+.form-edit input {
+	float: right;
+	width: 300px;
+}
+.form-edit input.date {
+	float: right;
+	width: 100px;
+}
+.form-submit{
+	height: 40px;
+}
+.form-submit input {
+	width: 100px;
+	margin-top: 10px;
+	float: right;
+}

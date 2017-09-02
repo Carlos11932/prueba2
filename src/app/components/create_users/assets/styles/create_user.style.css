@@ -1,0 +1,35 @@
+.container-create{
+	max-width: 450px;
+    background-color: #f8f8f8;
+    border: 1px solid #e7e7e7;
+    padding: 10px;
+    border-radius: 5px;
+}
+.header-create{
+	height: 50px;
+}
+.header-create > h4{
+	float: left;
+	margin: 5px;
+}
+.header-create > button{
+	float: right;
+}
+.form-create > .input-group{
+width: 100%;
+}
+.form-create label {
+	margin: 4px;
+}
+.form-create input {
+	float: right;
+	width: 300px;
+}
+.form-submit{
+	height: 40px;
+}
+.form-submit input {
+	width: 100px;
+	margin-top: 10px;
+	float: right;
+}
