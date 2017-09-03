@@ -1,11 +1,14 @@
-<div class="" *ngIf="!user">
-  <p>cargando...</p>
+<div *ngIf="user" class="col-md-3">
+  <div class="card">
+    <div class="caption">
+        <p><span>NAME</span>{{user.name}}</p>
+        <p><span>BIRTHDATE</span>{{user.birthdate | date:'yy/MM/dd'}}</p>
+        <p><span>ID</span>{{user.id}}</p>
+    </div>
+    <div class="show-buttons">
+      <a (click)="deleteConfirmed(user.id)" name="delete" class="f-right btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
+      <a [routerLink]="['/edit_user', user.id]" name="edit" class="f-right btn btn-sm btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
+    </div>
+  </div>
 </div>
-
-<div class="" *ngIf="user">
-
-<h3>
-  {{user.name}}
-  {{user.birthdate | date:'yy/MM/dd'}}
-</h3>
-</div>
+<div *ngIf="!user" class="loader"></div>

@@ -1,3 +1,4 @@
+
 .container-create{
 	max-width: 450px;
     background-color: #f8f8f8;
@@ -24,6 +25,10 @@ width: 100%;
 .form-create input {
 	float: right;
 	width: 300px;
+}
+.form-create input.date {
+	float: right;
+	width: 100px;
 }
 .form-submit{
 	height: 40px;

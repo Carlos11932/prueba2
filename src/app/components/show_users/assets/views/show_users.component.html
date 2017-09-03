@@ -1,34 +1,29 @@
-<h1>
-  {{title}}
-</h1>
 <div  class="row">
   <div *ngIf="users">
-    <div *ngFor="let user of users; let i = index" class="col-lg-3"  >
-      <div class="thumbnail">
-        <div *ngIf="confirmed == null">
-          <a [routerLink]="['/show_user_details', user.id]" name="show" class="btn btn-md btn-primary">show</a>
-          <a [routerLink]="['/edit_user', user.id]" name="edit" class="btn btn-md btn-warning">Edit</a>
-          <a (click)="deleteConfirmed(user.id)" name="delete" class="btn btn-md btn-danger">Delete</a>
+    <div *ngFor="let user of users; let i = index" class="col-md-3"  >
+<div [ngClass]="{'nonSelected': confirmed && confirmed != user.id}" class="card" *ngIf="confirmed != user.id">
+        <div class="caption">
+            <p><span>NAME</span>{{user.name}}</p>
+            <p><span>BIRTHDATE</span>{{user.birthdate | date:'yy/MM/dd'}}</p>
+            <p><span>ID</span>{{user.id}}</p>
         </div>
-        <div class="caption" *ngIf="confirmed == user.id">
-          <p>You will delete this User. Are you sure?</p>
-          <a (click)="onDeleteUser(user.id)" name="show" class="btn btn-md btn-danger">Delete user</a>
-          <a (click)="cancelConfirmed()" name="show" class="btn btn-md btn-warning">Cancel</a>
-          <ul>
-            <li>user: {{i+1}}</li>
-            <li>Name: {{user.name}}</li>
-            <li>Birthdate: {{user.birthdate}}</li>
-            <li>id: {{user.id}}</li>
-          </ul>
-        </div>
-        <div class="caption" *ngIf="confirmed == null">
-            <h2>user: {{i+1}}</h2>
-            <p>Name: {{user.name}}</p>
-            <p>Birthdate: {{user.birthdate | date:'yy/MM/dd'}}</p>
-            <p>id: {{user.id}}</p>
+        <div class="show-buttons">
+          <a (click)="deleteConfirmed(user.id)" name="delete" class="f-right btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
+          <a [routerLink]="['/show_user_details', user.id]" name="show" class="f-right btn btn-sm btn-primary"><i class="fa fa-eye" aria-hidden="true"></i>Show</a>
+          <a [routerLink]="['/edit_user', user.id]" name="edit" class="f-right btn btn-sm btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
         </div>
       </div>
-    </div>
+<div class="card" *ngIf="confirmed == user.id">
+        <div class="caption">
+            <p><span>NAME</span>{{user.name}}</p>
+            <p>You will delete this User. Are you sure?</p>
+        </div>
+        <div class="show-buttons">
+          <a (click)="onDeleteUser(user.id)" name="show" class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>Delete user</a>
+          <a (click)="cancelConfirmed()" name="show" class="btn btn-sm btn-warning"><i class="fa fa-ban" aria-hidden="true"></i>Cancel</a>
+        </div>
+      </div>
+</div>
   </div>
-  <span *ngIf="!users">Cargando..</span>
+  <div *ngIf="!users" class="loader"></div>
 </div>

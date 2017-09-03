@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['/assets/styles/home.component.css']
 })
 export class HomeComponent {
-  title = 'home!';
 
   constructor(){}
 

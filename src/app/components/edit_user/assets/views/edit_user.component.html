@@ -1,25 +1,21 @@
-<h1>
-  {{title}} edit user
-</h1>
-<hr>
 <div class="container-edit">
     <header class="header-edit">
         <h4>ID usuario: {{userToEdit.id}}</h4>
         <button class="f-right btn btn-sm btn-primary" (click)="setUserToEdit()">Restablecer usuario</button>
     </header>
     <form class="form-edit" (ngSubmit)="onSubmit()" #formUser="ngForm">
-<div class="input-group">
+        <div class="input-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="userToEdit.name" required>
         </div>
-<div class="input-group">
+        <div class="input-group">
             <label for="birthdate">Birthdate</label>
             <input type="number" min="1000" max="9999" class="form-control date" name="birthdate-year" [(ngModel)]="userToEdit.birthdate.year" required>
             <input type="number" min="1" max="12" class="form-control date" name="birthdate-month" [(ngModel)]="userToEdit.birthdate.month" required>
             <input type="number" min="1" max="31" class="form-control date" name="birthdate-date" [(ngModel)]="userToEdit.birthdate.date" required>
         </div>
-<div class="form-submit">
-            <input type="submit" class="btn btn-sm btn-success" value="{{title}}" [disabled]="!formUser.form.valid">
+        <div class="form-submit">
+            <input type="submit" class="btn btn-sm btn-success" value="Edit User" [disabled]="!formUser.form.valid">
         </div>
     </form>
 </div>

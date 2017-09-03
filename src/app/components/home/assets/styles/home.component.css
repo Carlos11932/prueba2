@@ -1,0 +1,10 @@
+.home-container{
+	max-width: 450px;
+    background-color: #f8f8f8;
+    border: 1px solid #e7e7e7;
+    padding: 10px;
+    border-radius: 5px;
+}
+h2{
+  color: #2795af;
+}
